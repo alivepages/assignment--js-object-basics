@@ -19,8 +19,27 @@
  *
  * HINT: You might be able to reuse some of the logic from createNameObject()
 */
+function getName(person) {
+  arr = person.split(' ')
+  return arr[0]
+}
 
+function getLastName(person) {
+  arr = person.split(' ')
+  return arr[1]
+}
 
+function createListOfObjects(list) {
+  var persons = []
+  for(i=0; i<list.length; i++) {
+    var person = {
+      firstName: getName(list[i]),
+      lastName: getLastName(list[i])
+    }
+    persons.push(person)
+  }
+  return persons
+}
 
 
 //*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
@@ -49,7 +68,7 @@ var ninjaListOfObjects = createListOfObjects(realNinjas)
 console.assert(typeof ninjaListOfObjects[0] === "object")
 console.assert(ninjaListOfObjects[0].firstName === "Chuck")
 console.assert(ninjaListOfObjects[0].lastName === "Norris")
-console.assert(ninjaListOfObjects[1].firstName === "Jacky")
+console.assert(ninjaListOfObjects[1].firstName === "Jackie")
 console.assert(ninjaListOfObjects[1].lastName === "Chan")
 console.assert(ninjaListOfObjects[3].firstName === "Billy")
 console.assert(ninjaListOfObjects[3].lastName === "Blanks")

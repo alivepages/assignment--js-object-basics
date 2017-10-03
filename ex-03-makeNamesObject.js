@@ -19,6 +19,24 @@
  *
 */
 
+function getName(person) {
+  arr = person.split(' ')
+  return arr[0]
+}
+
+function getLastName(person) {
+  arr = person.split(' ')
+  return arr[1]
+}
+
+function makeNamesObject(person1, person2, person3) {
+  var persons = {
+    [getName(person1)]: getLastName(person1),
+    [getName(person2)]: getLastName(person2),
+    [getName(person3)]: getLastName(person3)
+  }
+  return persons
+}
 
 
 

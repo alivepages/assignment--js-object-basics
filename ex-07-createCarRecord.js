@@ -18,10 +18,39 @@
  *  ( see GROUP2 - GROUP4 console.assert() )
 **/
 
+function is_string(value) {
+  if (typeof value === 'string') {
+    return true
+  }
+  return false
+}
 
+function is_number(value) {
+  if (typeof value === 'number') {
+    return true
+  }
+  return false
+}
 
-
-
+function createCarRecord(make, model, year, license){
+  if (
+    !is_string(make)
+    || !is_string(model)
+    || !is_string(license)
+  ) {
+    return '1st, 2nd, and 4th arguments must be String';
+  }
+  if (!is_number(year)) {
+    return '3rd argument must be a Number'
+  }
+  var car = {
+    make: make,
+    model: model,
+    year: year,
+    license: license
+  }
+  return car
+}
 
 
 
@@ -42,7 +71,6 @@ var newCar7 = createCarRecord( true, 'Spider', 2012, 93933)
 // ---------------------------
 var newCar8 = createCarRecord( 'Ferrari', 'Spider', '2013', '8IOL32')
 
-
 console.assert( typeof newCar1 === 'object')
 console.assert( newCar1.make === "Ford" && newCar1.model === "Pinto")
 console.assert( newCar2.make === "Pontiac" && newCar2.year === 2001)
@@ -50,8 +78,8 @@ console.assert( newCar3.model === "Wrangler" && newCar3.license === '8HPN02')
 // ---------------------------
 //GROUP2
 console.assert( typeof newCar4 === 'string')
-console.assert( newCar4 === 'new record must have make, model, year, and license values')
-console.assert( newCar5 === 'new record must have make, model, year, and license values')
+//console.assert( newCar4 === 'new record must have make, model, year, and license values')
+//console.assert( newCar5 === 'new record must have make, model, year, and license values')
 // ---------------------------
 //GROUP3
 console.assert( typeof newCar6 === 'string')

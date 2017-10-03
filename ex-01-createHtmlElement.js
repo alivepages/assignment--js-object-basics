@@ -15,7 +15,10 @@
 */
 
 
-
+function createHtmlElement(obj) {
+  var s = '<' + obj.element + ' class="' + obj.classNames + '">' + obj.textContent + '</' + obj.element + '>';
+  return s
+}
 
 
 
@@ -45,4 +48,4 @@ var htmlString3 = createHtmlElement(exampleObj3)
 
 console.assert(htmlString1 === '<p class="featured-section">This is so freaking cool!</p>')
 console.assert(htmlString2 === '<h2 class="ui-card-title bg--inverse">Bill Brasky</h2>')
-console.assert(htmlString2 === '<span class="highlight text-important">This is an important message.</span>')
+console.assert(htmlString3 === '<span class="highlight text-important">This is an important message.</span>')
