@@ -16,8 +16,8 @@
 
 
 function createHtmlElement(obj) {
-  var s = '<' + obj.element + ' class="' + obj.classNames + '">' + obj.textContent + '</' + obj.element + '>';
-  return s
+  var html = '<' + obj.element + ' class="' + obj.classNames + '">' + obj.textContent + '</' + obj.element + '>';
+  return html
 }
 
 
